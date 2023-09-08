@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use App\Models\msb;
 
 class msbControllers extends Controller
 {
@@ -28,7 +30,18 @@ class msbControllers extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 接近來的資料要驗證
+        $request->validate([
+            'comments'=> 'required||max:255'
+        ]);
+
+        // 把資料存進對應的資料庫
+        msb::create([
+            'message' => $request->comments,
+        ]);
+        //all form 表單input 的所有東西
+
+        return view ('ms-board');
     }
 
     /**

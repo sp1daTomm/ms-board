@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::get('/index',[msbControllers::class,'index'])->name('msb');
 
 
+Route::post('/comment',[msbControllers::class,'store'])->name('comment');

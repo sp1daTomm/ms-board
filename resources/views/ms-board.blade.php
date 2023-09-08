@@ -182,14 +182,14 @@
                                     <table class="myFormat">
 
 
-                                        <form class="row g-3">
-
+                                        <form class="row g-3 hhg" action="{{route('comment')}}" method="POST">
+                                            @csrf
                                             <div class="col-12 d-flex row">
                                                 <label for="formGroupExampleInput" class="form-label">message
                                                     </label>
                                                 <input type="text" class="form-control" id="formGroupExampleInput"
-                                                    placeholder="message">
-                                                    <button type="button" class="btn btn-primary w-25">send message</button>
+                                                    placeholder="message" name="comments" required>
+                                                    <button type="submit" class="btn btn-primary w-25">send message</button>
                                             </div>
 
                                             <label class="d-flex flex-column"><div class="message-text-box d-100"></div>
